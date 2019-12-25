@@ -132,7 +132,7 @@
       <workItem from="1577159412260" duration="139000" />
       <workItem from="1577159568728" duration="220000" />
       <workItem from="1577159820562" duration="620000" />
-      <workItem from="1577240784335" duration="8085000" />
+      <workItem from="1577240784335" duration="11037000" />
     </task>
     <task id="LOCAL-00001" summary="用幂法求矩阵的最大近似特征值&#10;参考网址：&#10;https://blog.csdn.net/madingyoung/article/details/8236471">
       <created>1577254531451</created>
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577254531451</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="用幂法求矩阵的最大近似特征值&#10;参考网址：&#10;https://blog.csdn.net/madingyoung/article/details/8236471">
+      <created>1577255075627</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577255075627</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

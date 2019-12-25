@@ -18,6 +18,9 @@ public class MI {
     static int n = 0;
     static double m;
     static double e = 0;
+    static double CI;
+    static double CR;
+    static double RI []={0,0,0.58,0.90,1.12,1.24,1.32,1.41,1.45};//判断矩阵的平均随机一致性指标RI值
 
     public static void main(String[] args) {
 
@@ -52,7 +55,10 @@ public class MI {
             System.out.print(" 最大特征根" + m);
             System.out.println();
         }
-
+        System.out.println("最大特征根=" + m);
+        System.out.println("CI="+(m-n)/(n-1));
+        System.out.println("RI="+RI [n-1]);
+        System.out.println("CR="+(m-n)/(n-1)/RI [n-1]);
     }
 
     private static void getA() {
