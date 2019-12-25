@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d312b25-fde2-4b1b-9868-29fa3fdf3966" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/20180930子任务2研究进展报告.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/30688.PDF.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/20180930子任务2研究进展报告.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/doc/20180930子任务2研究进展报告.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,8 +132,16 @@
       <workItem from="1577159412260" duration="139000" />
       <workItem from="1577159568728" duration="220000" />
       <workItem from="1577159820562" duration="620000" />
-      <workItem from="1577240784335" duration="7480000" />
+      <workItem from="1577240784335" duration="8085000" />
     </task>
+    <task id="LOCAL-00001" summary="用幂法求矩阵的最大近似特征值&#10;参考网址：&#10;https://blog.csdn.net/madingyoung/article/details/8236471">
+      <created>1577254531451</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577254531451</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,5 +159,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="用幂法求矩阵的最大近似特征值&#10;参考网址：&#10;https://blog.csdn.net/madingyoung/article/details/8236471" />
+    <option name="LAST_COMMIT_MESSAGE" value="用幂法求矩阵的最大近似特征值&#10;参考网址：&#10;https://blog.csdn.net/madingyoung/article/details/8236471" />
   </component>
 </project>

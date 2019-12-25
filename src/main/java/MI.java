@@ -1,4 +1,5 @@
 /*
+ *此类用来计算矩阵的最大特征根及特征向量
  * JAVA   幂法求解矩阵特征值及特征向量
  * a[][] 矩阵
  * v[]  初始向量
@@ -56,13 +57,13 @@ public class MI {
 
     private static void getA() {
         Scanner as = new Scanner(System.in);
-        System.out.print("输入方程组的元数：");
+        System.out.print("输入方程组的元数（即输入矩阵阶数）：");
         n = as.nextInt();
         a = new double[n][n];
         v = new double[n];
 
         u = new double[n];
-        System.out.println("输入方程组的系数矩阵a：");
+        System.out.println("输入方程组的系数矩阵a（按行输入矩阵）：");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = as.nextDouble();
