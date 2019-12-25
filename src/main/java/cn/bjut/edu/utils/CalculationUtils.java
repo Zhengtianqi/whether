@@ -30,6 +30,12 @@ public class CalculationUtils {
         System.out.println(result.getRI());
     }
 
+    /**
+     * core 计算
+     * @param inputMatrix 输入的 n*n 矩阵 从左到右，从上到下
+     * @param inputVector 输入的初始向量
+     * @return 返回结果实体
+     */
     public static CalculationResult getCalculationResult(List<Double> inputMatrix, List<Double> inputVector) {
         double m = 0;
         double[][] matrix = createMatrix(inputMatrix);
