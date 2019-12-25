@@ -3,7 +3,6 @@ package cn.bjut.edu.utils;
 
 import cn.bjut.edu.entity.CalculationResult;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
