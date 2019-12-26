@@ -42,7 +42,7 @@ public class CalculationUtils {
         int n = (int) Math.sqrt(inputMatrix.size());
 
         double[] v = new double[n];
-        double[] u = CalculationUtils.listToDouble(inputVector);
+        double[] u = CalculationUtils.listToDoubleArray(inputVector);
 
         if (n != u.length) {
             throw new ArithmeticException("Vector's length is not correct");
@@ -101,9 +101,9 @@ public class CalculationUtils {
      */
     private static double getMaximal(double[] v) {
         double max = 0.0;
-        for (int i = 0; i < v.length; i++) {
-            if (Math.abs(v[i]) >= max) {
-                max = Math.abs(v[i]);
+        for (double value : v) {
+            if (Math.abs(value) >= max) {
+                max = Math.abs(value);
             }
         }
         return max;
@@ -115,7 +115,7 @@ public class CalculationUtils {
      * @param list 输入list
      * @return 输出double[]
      */
-    private static double[] listToDouble(List<Double> list) {
+    private static double[] listToDoubleArray(List<Double> list) {
         Double[] doubles = new Double[list.size()];
         list.toArray(doubles);
         double[] result = new double[doubles.length];
