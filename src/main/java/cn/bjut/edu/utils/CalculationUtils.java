@@ -39,22 +39,29 @@ public class CalculationUtils {
 //   [0.2500 0.5000 0.2500]
         List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
         List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
-        CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
-        System.out.println("lmax=" + result.getLmax());
-        System.out.println("CI=" + result.getCI());
-        System.out.println("CR=" + result.getCR());
-        System.out.println("RI=" + result.getRI());
+        try {
+            CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
+            System.out.println("lmax=" + result.getLmax());
+            System.out.println("CI=" + result.getCI());
+            System.out.println("CR=" + result.getCR());
+            System.out.println("RI=" + result.getRI());
+        } catch (ArithmeticException e) {
+            System.out.println("输入矩阵 不是 n * n 的矩阵");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("输入单层权重 不是 n 向量");
+        }
+
     }
 
     /**
      * core 计算
-     * 若不是 n阶初始向量，抛出{@link ArithmeticException}异常
      *
      * @param inputMatrix 输入的 n*n 矩阵 从左到右，从上到下
      * @param inputVector 输入的初始向量
      * @return 返回结果实体
+     * @throws ArithmeticException 若不是 n阶初始向量，抛出异常
      */
-    public static CalculationResult getCalculationResult(List<Double> inputMatrix, List<Double> inputVector) {
+    public static CalculationResult getCalculationResult(List<Double> inputMatrix, List<Double> inputVector) throws ArrayIndexOutOfBoundsException, ArithmeticException {
         double m = 0;
         double[][] matrix = createMatrix(inputMatrix);
         int n = (int) Math.sqrt(inputMatrix.size());
@@ -63,7 +70,7 @@ public class CalculationUtils {
         double[] u = CalculationUtils.listToDoubleArray(inputVector);
 
         if (n != u.length) {
-            throw new ArithmeticException("Vector's length is not correct");
+            throw new ArrayIndexOutOfBoundsException("Vector's length is not correct");
         }
         System.arraycopy(u, 0, v, 0, n);
         // 迭代步数
@@ -88,12 +95,13 @@ public class CalculationUtils {
     }
 
     /**
-     * 创建矩阵,若不是 n*n 矩阵，抛出{@link ArithmeticException}异常
+     * 创建矩阵
      *
      * @param input 必须为 n*n 正方形矩阵
      * @return 矩阵数组
+     * @throws ArithmeticException 若不是 n*n 矩阵，抛出异常
      */
-    private static double[][] createMatrix(List<Double> input) {
+    private static double[][] createMatrix(List<Double> input) throws ArithmeticException {
         int k = 0;
         int inputSize = input.size();
         int n = (int) Math.sqrt(inputSize);
@@ -142,5 +150,8 @@ public class CalculationUtils {
             result[i] = doubles[i];
         }
         return result;
+    }
+
+    private CalculationUtils() {
     }
 }
