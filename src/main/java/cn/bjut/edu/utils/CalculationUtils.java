@@ -59,7 +59,8 @@ public class CalculationUtils {
      * @param inputMatrix 输入的 n*n 矩阵 从左到右，从上到下
      * @param inputVector 输入的初始向量
      * @return 返回结果实体
-     * @throws ArithmeticException 若不是 n阶初始向量，抛出异常
+     * @throws ArithmeticException            若不是 n阶初始向量，抛出异常
+     * @throws ArrayIndexOutOfBoundsException 若不是 n*n 矩阵，抛出异常
      */
     public static CalculationResult getCalculationResult(List<Double> inputMatrix, List<Double> inputVector) throws ArrayIndexOutOfBoundsException, ArithmeticException {
         double m = 0;
