@@ -26,13 +26,13 @@ public class CalculationUtils {
      */
     public static void main(String[] args) {
 //   矩阵为：
-//        ——        ——
-//        | 1.0  2.0 |
-//        |          |
-//        | 0.5  1.0 |
-//        ——       ——
+//        ——             ——
+//        | 1.0  0.5  1.0 |
+//        | 2.0  1.0  2.0 |
+//        | 1.0  0.5  1.0 |
+//        ——             ——
 //   单层权重为：
-//   [0.6667 0.3333]
+//   [0.2500 0.5000 0.2500]
         List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
         List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
         CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
