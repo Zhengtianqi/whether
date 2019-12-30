@@ -18,20 +18,24 @@ public class CalculationUtils {
      * 判断矩阵的平均随机一致性指标RI值
      */
     private final static double[] RI = {0, 0, 0.58, 0.90, 1.12, 1.24, 1.32, 1.41, 1.45};
+    /**
+     * 常数：分母为 0 情况
+     */
+    private final static double NAN = 1E-6;
 
     /**
      * 这是一个测试用例
      *
-     * @param args 串数组
+     * @param args args字符串数组
      */
     public static void main(String[] args) {
-//   矩阵为：
+//   输入矩阵为：
 //        ——             ——
 //        | 1.0  0.5  1.0 |
 //        | 2.0  1.0  2.0 |
 //        | 1.0  0.5  1.0 |
 //        ——             ——
-//   单层权重为：
+//   输入单层权重为：
 //   [0.2500 0.5000 0.2500]
         List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
         List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
@@ -76,8 +80,8 @@ public class CalculationUtils {
         CalculationResult calculationResult = new CalculationResult();
         calculationResult.setCI((m - n) / (n - 1));
         calculationResult.setRI(RI[n - 1]);
-        double CR = (m - n) / (n - 1) / RI[n - 1];
-        calculationResult.setCR(Double.isNaN(CR) ? 1E-6 : CR);
+        double cr = (m - n) / (n - 1) / RI[n - 1];
+        calculationResult.setCR(Double.isNaN(cr) ? NAN : cr);
         calculationResult.setMax(m);
         return calculationResult;
     }
