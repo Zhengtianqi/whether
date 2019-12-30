@@ -1,3 +1,7 @@
+/**
+ * 此类用来计算矩阵的最大特征根及特征向量
+ * JAVA   幂法求解矩阵特征值及特征向量
+ */
 package cn.bjut.edu.utils;
 
 
@@ -18,20 +22,29 @@ public class CalculationUtils {
     /**
      * 这是一个测试用例
      *
-     * @param args 输入
+     * @param args 串数组
      */
     public static void main(String[] args) {
-        List<Double> inputMatrix = Arrays.asList(1.0, 3.0, 0.333, 1.0);
-        List<Double> inputVector = Arrays.asList(2.0, 3.0);
+//   矩阵为：
+//        ——        ——
+//        | 1.0  2.0 |
+//        |          |
+//        | 0.5  1.0 |
+//        ——       ——
+//   单层权重为：
+//   [0.6667 0.3333]
+        List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
+        List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
         CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
-        System.out.println(result.getMax());
-        System.out.println(result.getCI());
-        System.out.println(result.getCR());
-        System.out.println(result.getRI());
+        System.out.println("lmax=" + result.getMax());
+        System.out.println("CI=" + result.getCI());
+        System.out.println("CR=" + result.getCR());
+        System.out.println("RI=" + result.getRI());
     }
 
     /**
      * core 计算
+     *
      * @param inputMatrix 输入的 n*n 矩阵 从左到右，从上到下
      * @param inputVector 输入的初始向量
      * @return 返回结果实体
