@@ -76,7 +76,8 @@ public class CalculationUtils {
         CalculationResult calculationResult = new CalculationResult();
         calculationResult.setCI((m - n) / (n - 1));
         calculationResult.setRI(RI[n - 1]);
-        calculationResult.setCR((m - n) / (n - 1) / RI[n - 1]);
+        double CR = (m - n) / (n - 1) / RI[n - 1];
+        calculationResult.setCR(Double.isNaN(CR) ? 1E-6 : CR);
         calculationResult.setMax(m);
         return calculationResult;
     }
