@@ -40,7 +40,7 @@ public class CalculationUtils {
         List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
         List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
         CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
-        System.out.println("lmax=" + result.getMax());
+        System.out.println("lmax=" + result.getLmax());
         System.out.println("CI=" + result.getCI());
         System.out.println("CR=" + result.getCR());
         System.out.println("RI=" + result.getRI());
@@ -82,7 +82,7 @@ public class CalculationUtils {
         calculationResult.setRI(RI[n - 1]);
         double cr = (m - n) / (n - 1) / RI[n - 1];
         calculationResult.setCR(Double.isNaN(cr) ? NAN : cr);
-        calculationResult.setMax(m);
+        calculationResult.setLmax(m);
         return calculationResult;
     }
 

@@ -11,7 +11,7 @@ public class CalculationResult implements Serializable {
     private double CI;
     private double RI;
     private double CR;
-    private double max;
+    private double lmax;
 
     public double getCI() {
         return CI;
@@ -37,11 +37,11 @@ public class CalculationResult implements Serializable {
         this.CR = CR;
     }
 
-    public double getMax() {
-        return max;
+    public double getLmax() {
+        return lmax;
     }
 
-    public void setMax(double max) {
-        this.max = max;
+    public void setLmax(double lmax) {
+        this.lmax = lmax;
     }
 }
