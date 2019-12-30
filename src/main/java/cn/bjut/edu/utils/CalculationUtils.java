@@ -48,6 +48,7 @@ public class CalculationUtils {
 
     /**
      * core 计算
+     * 若不是 n阶初始向量，抛出{@link ArithmeticException}异常
      *
      * @param inputMatrix 输入的 n*n 矩阵 从左到右，从上到下
      * @param inputVector 输入的初始向量
@@ -87,7 +88,7 @@ public class CalculationUtils {
     }
 
     /**
-     * 创建矩阵
+     * 创建矩阵,若不是 n*n 矩阵，抛出{@link ArithmeticException}异常
      *
      * @param input 必须为 n*n 正方形矩阵
      * @return 矩阵数组
