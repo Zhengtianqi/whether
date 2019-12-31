@@ -15,19 +15,7 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.ejml/ejml-all -->
-        <!--矩阵基本运算开源组件-->
-        <dependency>
-            <groupId>org.ejml</groupId>
-            <artifactId>ejml-all</artifactId>
-            <version>0.38</version>
-        </dependency>
-        <!--commons-lang3提供的工具类-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.0</version>
-        </dependency>
+
     </dependencies>
 
     <build>
