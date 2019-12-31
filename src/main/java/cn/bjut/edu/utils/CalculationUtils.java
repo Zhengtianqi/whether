@@ -5,6 +5,7 @@
 package cn.bjut.edu.utils;
 
 
+import cn.bjut.edu.constant.CalculationConstant;
 import cn.bjut.edu.entity.CalculationResult;
 
 import java.util.Arrays;
@@ -15,31 +16,23 @@ import java.util.List;
  */
 public class CalculationUtils {
     /**
-     * 判断矩阵的平均随机一致性指标RI值
-     */
-    private final static double[] RI = {0, 0, 0.58, 0.90, 1.12, 1.24, 1.32, 1.41, 1.45};
-    /**
-     * 常数：分母为 0 情况
-     */
-    private final static double NAN = 1E-6;
-
-    /**
      * 这是一个测试用例
      *
      * @param args args字符串数组
      */
     public static void main(String[] args) {
-//   输入矩阵为：
-//        ——             ——
-//        | 1.0  0.5  1.0 |
-//        | 2.0  1.0  2.0 |
-//        | 1.0  0.5  1.0 |
-//        ——             ——
-//   输入单层权重为：
-//   [0.2500 0.5000 0.2500]
+        //   输入矩阵为：
+        //        ——             ——
+        //        | 1.0  0.5  1.0 |
+        //        | 2.0  1.0  2.0 |
+        //        | 1.0  0.5  1.0 |
+        //        ——             ——
+        //   输入单层权重为：
+        //   [0.2500 0.5000 0.2500]
         List<Double> inputMatrix = Arrays.asList(1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0);
         List<Double> inputVector = Arrays.asList(0.2500, 0.5000, 0.2500);
         try {
+            // 输出
             CalculationResult result = CalculationUtils.getCalculationResult(inputMatrix, inputVector);
             System.out.println("lmax=" + result.getLmax());
             System.out.println("CI=" + result.getCI());
@@ -75,7 +68,7 @@ public class CalculationUtils {
         }
         System.arraycopy(u, 0, v, 0, n);
         // 迭代步数
-        for (int k = 0; k < 10; k++) {
+        for (int k = 0; k < CalculationConstant.STEP; k++) {
             for (int i = 0; i < n; i++) {
                 // 每次相乘后置v[i]=0;
                 v[i] = 0;
@@ -88,9 +81,9 @@ public class CalculationUtils {
         }
         CalculationResult calculationResult = new CalculationResult();
         calculationResult.setCI((m - n) / (n - 1));
-        calculationResult.setRI(RI[n - 1]);
-        double cr = (m - n) / (n - 1) / RI[n - 1];
-        calculationResult.setCR(Double.isNaN(cr) ? NAN : cr);
+        calculationResult.setRI(CalculationConstant.RI[n - 1]);
+        double cr = (m - n) / (n - 1) / CalculationConstant.RI[n - 1];
+        calculationResult.setCR(Double.isNaN(cr) ? CalculationConstant.NAN : cr);
         calculationResult.setLmax(m);
         return calculationResult;
     }
