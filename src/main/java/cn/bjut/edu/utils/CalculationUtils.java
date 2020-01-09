@@ -23,7 +23,6 @@ public class CalculationUtils {
      * @throws ArrayIndexOutOfBoundsException 若不是 n*n 矩阵，抛出异常
      */
     public static CalculationResult getCalculationResult(List<Double> inputMatrix, List<Double> inputVector) throws ArrayIndexOutOfBoundsException, ArithmeticException {
-        double m = 0;
         double[][] matrix = createMatrix(inputMatrix);
         int n = (int) Math.sqrt(inputMatrix.size());
 
@@ -34,6 +33,7 @@ public class CalculationUtils {
             throw new ArrayIndexOutOfBoundsException("Vector's length is not correct");
         }
         System.arraycopy(u, 0, v, 0, n);
+        double m = 0;
         // 迭代步数
         for (int k = 0; k < CalculationConstant.STEP; k++) {
             for (int i = 0; i < n; i++) {
@@ -63,7 +63,6 @@ public class CalculationUtils {
      * @throws ArithmeticException 若不是 n*n 矩阵，抛出异常
      */
     private static double[][] createMatrix(List<Double> input) throws ArithmeticException {
-        int k = 0;
         int inputSize = input.size();
         int n = (int) Math.sqrt(inputSize);
 
@@ -71,10 +70,10 @@ public class CalculationUtils {
             throw new ArithmeticException("matrix's length is not correct");
         }
         double[][] matrix = new double[n][n];
+        int k = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                matrix[i][j] = input.get(k);
-                k++;
+                matrix[i][j] = input.get(k++);
             }
         }
         return matrix;
